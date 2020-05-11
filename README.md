@@ -1,6 +1,8 @@
 # tib-java
-[Run in Repl.it](https://github.com/matyasbohacek/tib-java)
+
 Tento repo obsahuje projekty z kroužku Javy v TIB pro rok 2019/20. Webové stránky jsou dostupné [zde](https://tib.cz/krouzky/trava/kategorie/27).
+
+AHOJ SVĚTE!
 
 ## Projekty
 
