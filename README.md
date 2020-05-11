@@ -11,7 +11,7 @@ Jednoduchá desktopová hra cookie clicker s obchůdkem i auto-clicky.
 ### Snake
 
 Klasická hra Snake se základními funkcemi.
-
+AHOJ SVETE
 ### Rocket
 
 Týmový soutěžní projekt, který zde obsahuje možné řešení (ne jediné správné) i s kontrolery.
