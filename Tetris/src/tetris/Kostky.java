@@ -16,3 +16,4 @@ public class Kostky {
     int x; // V políčcích
     int y; // V políčcích
 }
+

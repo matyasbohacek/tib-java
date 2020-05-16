@@ -7,8 +7,8 @@ package tetris;
 
 /**
  *
- * @author matyas.bohacek
+ * @author Ucebna
  */
 public enum Barva {
-    
+    ZELENA, MODRA, CERVENA, ZLUTA, FIALOVA;
 }
