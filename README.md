@@ -18,7 +18,9 @@ Týmový soutěžní projekt, který zde obsahuje možné řešení (ne jediné 
 
 ### Tetris
 
-*In progress*
+*Pracuje se na tom*
+
+Známá hra s padajícími kostkami.
 
 ## Soutěž Mladý programátor
 
