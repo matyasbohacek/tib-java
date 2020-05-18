@@ -1,6 +1,6 @@
 # tib-java
 
-Tento repo obsahuje projekty z kroužku Javy v TIB pro rok 2019/20. Webové stránky jsou dostupné [zde](https://tib.cz/krouzky/trava/kategorie/27).
+Tento repo obsahuje projekty z kroužku Javy v TIB, z. s. pro rok 2019/20. Webové stránky jsou dostupné [zde](https://tib.cz/krouzky/trava/kategorie/27).
 
 ## Projekty
 
