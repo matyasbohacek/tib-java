@@ -3,17 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris;
+
+import java.util.Random;
 
 /**
  *
  * @author Ucebna
  */
-public class Kostky {
-    Barva barva;
-    Tvar tvar;
-    int rychlost; // Počet ms (milisekund) za spadnutí o jendo políčko
-    int x; // V políčcích
-    int y; // V políčcích
-}
+public enum Barva {
+    ZELENA, MODRA, CERVENA, ZLUTA, FIALOVA;
 
+    public static Barva nahodnaBarva() {
+      return values()[new Random().nextInt(values().length)];
+    }
+
+}

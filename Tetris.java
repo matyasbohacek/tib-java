@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris;
+
 
 import javax.swing.*;
 
@@ -11,12 +11,9 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 
-/**
- *
- * @author Ucebna
- */
-public class Tetris extends JFrame{
-    public Tetris(){
+
+public class Tetris extends JFrame {
+    public Tetris() {
         add(new Panel());
         setTitle("TETRIS");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,14 +21,6 @@ public class Tetris extends JFrame{
         setVisible(true);
         setSize(new Dimension(321, 813));
     }
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(() -> {
-            JFrame frame = new Tetris();
-            frame.setVisible(true);
-        });
-    }
+
 
 }

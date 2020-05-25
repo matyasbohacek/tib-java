@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris;
+
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -11,6 +11,7 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.util.Random;
 
 /**
  *
@@ -33,9 +34,10 @@ public class Panel extends JPanel implements ActionListener {
         kostky = new Kostky[10];
 
         Kostky k = new Kostky();
-        k.x = 3;
-        k.y = 4;
-        k.tvar = Tvar.CTVEREC;
+        k.x = new Random().nextInt(POCET_X - 1);
+        k.y = 2;
+        k.tvar = Tvar.nahodnyTvar();
+        k.barva = Barva.nahodnaBarva();
         kostky[0] = k;
 
         timer = new Timer(150, this);
