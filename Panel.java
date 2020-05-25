@@ -38,6 +38,7 @@ public class Panel extends JPanel implements ActionListener {
         k.y = 2;
         k.tvar = Tvar.nahodnyTvar();
         k.barva = Barva.nahodnaBarva();
+        k.muzeSeHybat = true;
         kostky[0] = k;
 
         timer = new Timer(150, this);
@@ -68,7 +69,29 @@ public class Panel extends JPanel implements ActionListener {
     }
 
     public void nakresliKostky(Kostky kostky, Graphics g) {
-        g.setColor(Color.red);
+
+        switch (kostky.barva) {
+          case ZELENA:
+            g.setColor(Color.green);
+            break;
+
+          case MODRA:
+            g.setColor(Color.blue);
+            break;
+
+          case CERVENA:
+            g.setColor(Color.red);
+            break;
+
+          case ZLUTA:
+            g.setColor(Color.yellow);
+            break;
+
+          case FIALOVA:
+            g.setColor(Color.magenta);
+            break;
+
+        }
 
         for (int y = 0; y < 4; y++) {
             for (int x = 0; x < 2; x++) {
@@ -85,8 +108,18 @@ public class Panel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // Přepočítat kostky
         for (int i = 0; i < kostky.length; i++) {
-            if (kostky[i] != null) {
+            if (kostky[i] != null && kostky[i].muzeSeHybat == true) {
                 kostky[i].y++;
+            }
+
+            // Ověřování zastavení
+            if(kostky[i] != null) {
+              System.out.println(kostky[i].y + Tvar.vyska(kostky[i].tvar));
+
+              if (kostky[i].y + Tvar.vyska(kostky[i].tvar) >= 19) {
+                System.out.println(kostky[i].y + Tvar.vyska(kostky[i].tvar));
+                kostky[i].muzeSeHybat = false;
+              }
             }
         }
 

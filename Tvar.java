@@ -5,6 +5,8 @@
  */
 
 import java.util.Random;
+import java.util.Arrays;
+
 
 /**
  *
@@ -16,6 +18,27 @@ public enum Tvar {
     public static Tvar nahodnyTvar() {
       return values()[new Random().nextInt(values().length)];
     }
+
+
+    public static int vyska(Tvar tvar) {
+      if (tvar == Tvar.CTVEREC) {
+        return 2;
+      } else if (tvar == Tvar.ICKO) {
+        return 4;
+      } else {
+        return 3;
+      }
+      /*int vyska = 0;
+
+      for (int i = 0; i < 4; i++) {
+        if (Arrays.asList(tvar.vTabulce()[i]).contains(true)) {
+          vyska++;
+        }
+      }
+
+      return vyska;*/
+    }
+
 
     public boolean[][] vTabulce() {
         switch (this) {
