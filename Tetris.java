@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
+import java.awt.event.KeyListener;
 
 
 public class Tetris extends JFrame {
@@ -21,6 +22,4 @@ public class Tetris extends JFrame {
         setVisible(true);
         setSize(new Dimension(321, 813));
     }
-
-
 }
