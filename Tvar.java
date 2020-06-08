@@ -28,15 +28,14 @@ public enum Tvar {
       } else {
         return 3;
       }
-      /*int vyska = 0;
+    }
 
-      for (int i = 0; i < 4; i++) {
-        if (Arrays.asList(tvar.vTabulce()[i]).contains(true)) {
-          vyska++;
-        }
+    public static int sirka(Tvar tvar) {
+      if (tvar == Tvar.ICKO) {
+        return 1;
+      } else {
+        return 2;
       }
-
-      return vyska;*/
     }
 
 

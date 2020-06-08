@@ -117,16 +117,46 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
             }
 
             // Ověřování zastavení
-            if(kostky[i] != null) {
-              if (kostky[i].y + Tvar.vyska(kostky[i].tvar) >= 19 && kostky[i].muzeSeHybat == true) {
+            if(kostky[i] != null && kostky[i].muzeSeHybat == true) {
+              if (kostky[i].y + Tvar.vyska(kostky[i].tvar) >= 19) {
                 kostky[i].muzeSeHybat = false;
 
                 vytvorKostku(i + 1);
                 repaint();
                 return;
               }
+
+              
+              boolean[][] poleObsazenosti = new boolean[POCET_X][POCET_Y];
+
+              for (Kostky k: kostky) {
+                if (k != null && k.muzeSeHybat == false) {
+                  for (int y = 0; y < 4; y++) {
+                    for (int x = 0; x < 2; x++) {
+                      poleObsazenosti[k.x + x][k.y + y] = k.tvar.vTabulce()[y][x];
+                    }
+                  }
+                }
+              }
+
+              for (int y = 0; y < 4; y++) {
+                for (int x = 0; x < 2; x++) {
+                  if (kostky[i].tvar.vTabulce()[y][x]) {
+                    if (poleObsazenosti[kostky[i].x + x][kostky[i].y + y + 1]) {
+                      // Narazila by
+                      kostky[i].muzeSeHybat = false;
+
+                      vytvorKostku(i + 1);
+                      repaint();
+                      return;
+                    }
+                  }
+                }
+              }
+
             }
         }
+              
 
         // Znova vykreslit
         repaint();
@@ -166,7 +196,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
           kostky[iAktivni].x -= 1;
         }
       } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-        if (kostky[iAktivni].x < POCET_X) {
+        if (kostky[iAktivni].x + Tvar.sirka(kostky[iAktivni].tvar) < POCET_X) {
           kostky[iAktivni].x += 1;
         }
       }
