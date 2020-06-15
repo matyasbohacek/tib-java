@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris;
+
 
 /**
  *
@@ -15,5 +15,6 @@ public class Kostky {
     int rychlost; // Počet ms (milisekund) za spadnutí o jendo políčko
     int x; // V políčcích
     int y; // V políčcích
-}
+    boolean muzeSeHybat;
 
+}
