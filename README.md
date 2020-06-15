@@ -2,6 +2,8 @@
 
 Tento repo obsahuje projekty z kroužku Javy v TIB, z. s. pro rok 2019/20. Webové stránky jsou dostupné [zde](https://tib.cz/krouzky/trava/kategorie/27).
 
+AHOJ SVĚTE!
+
 ## Projekty
 
 ### Cookie clicker
