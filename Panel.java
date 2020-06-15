@@ -28,6 +28,8 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     public static final int POCET_Y = 25;
     public static final int VELIKOST_CTVERECKU = 30;
 
+    public static boolean game = true;
+
     public Panel() {
         setBackground(Color.black);
         setFocusable(true);
@@ -37,7 +39,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 
         Kostky k = new Kostky();
         k.x = new Random().nextInt(POCET_X - 1);
-        k.y = 2;
+        k.y = 0;
         k.tvar = Tvar.nahodnyTvar();
         k.barva = Barva.nahodnaBarva();
         k.muzeSeHybat = true;
@@ -55,19 +57,24 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         g.setColor(Color.black);
         g.fillRect(0, 0, 301, 751);
 
-        // Čtverečky
-        g.setColor(Color.white);
-        for (int x = 0; x < POCET_X; x++) {
-            for (int y = 0; y < POCET_Y; y++) {
-                g.drawRect(x * VELIKOST_CTVERECKU + 1, y * VELIKOST_CTVERECKU + 1,
-                        VELIKOST_CTVERECKU - 2, VELIKOST_CTVERECKU - 2);
-            }
-        }
+        if (game == true) {
+          // Čtverečky
+          g.setColor(Color.white);
+          for (int x = 0; x < POCET_X; x++) {
+              for (int y = 0; y < POCET_Y; y++) {
+                  g.drawRect(x * VELIKOST_CTVERECKU + 1, y * VELIKOST_CTVERECKU + 1,
+                          VELIKOST_CTVERECKU - 2, VELIKOST_CTVERECKU - 2);
+              }
+          }
 
-        for (Kostky kostka : kostky) {
-            if (kostka != null) {
-                nakresliKostky(kostka, g);
-            }
+          for (Kostky kostka : kostky) {
+              if (kostka != null) {
+                  nakresliKostky(kostka, g);
+              }
+          }
+        } else {
+          g.setColor(Color.white);
+          g.drawString("GAME OVER", 20, 50);
         }
 
     }
@@ -146,6 +153,14 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
                       // Narazila by
                       kostky[i].muzeSeHybat = false;
 
+                      // Ověření konce hry
+                      for (int j = 0; j < POCET_X; j++) {
+                        if(poleObsazenosti[j][0] == true) {
+                          game = false;
+                          return;
+                        }
+                      }
+
                       vytvorKostku(i + 1);
                       repaint();
                       return;
@@ -165,7 +180,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     public void vytvorKostku(int i) {
       Kostky k = new Kostky();
       k.x = new Random().nextInt(POCET_X - 1);
-      k.y = 2;
+      k.y = 0;
       k.tvar = Tvar.nahodnyTvar();
       k.barva = Barva.nahodnaBarva();
       k.muzeSeHybat = true;
